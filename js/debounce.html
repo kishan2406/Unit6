@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        height: 40px;
+        width: 150px;
+        background-color: violet;
+    }
+</style>
+
+ <body>
+
+
+<button id="debounce">
+       Click me(Debounce)
+   </button>
+
+    </body>
+
+    </html>
+    
+    <script>
+    
+    var button = document.getElementById("debounce");
+
+    const debounce = (function1, delay)=>{
+
+        let D_Timer;
+
+        return function(){
+            const context = this
+
+            const args = arguments
+
+            clearTimeout(D_Timer)
+
+            D_Timer= setTimeout(() => function1.apply(context, args), delay)
+
+        }
+    }
+    button.addEventListener('click', debounce(function(){
+
+        
+            alert("I am debouncer function " +
+
+                "After pressing the button, see me in 3sec")
+
+                            }, 3000));
+    
+  
+  </script>
+    

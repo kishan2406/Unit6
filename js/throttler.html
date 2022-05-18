@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        height: 40px;
+        width: 150px;
+        background-color: gold;
+        /* color: #fff */
+    }
+</style>
+<body>
+    <button id="throttle_id">Click Throttle</button>
+</body>
+</html>
+
+<script>
+    const btn=document.querySelector("#throttle_id");
+     
+    // Throttling Function
+    const throttling_Function=(function1, delay)=>{
+ 
+   
+      let prev = 0;
+      return (...args) => {
+      
+        let now = new Date().getTime();
+ 
+        
+        console.log(now-prev, delay);
+         
+     
+        if(now - prev> delay){
+          prev = now;
+ 
+          
+          return function1(...args); 
+        }
+      }
+    }
+    btn.addEventListener("click", throttling_Function(()=>{
+
+      console.log("Someone clicked me")
+    }, 1500));
+  </script>
