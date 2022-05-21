@@ -5,16 +5,18 @@ function toggler(){
     var index = -1;
 
     return function (){
-     
-     index = index-1;
-     if(index>=args.length)
-     index=0;
-    }
-    return args(index)
+     index = index+1;
+    
+    return args[index]
+}
 }
 
 const toggle = toggler(1,2,3)
+// const toggle = toggler('on','off')
 
-toggle(1)
-toggle(2)
-toggle(3)
+console.log(toggle()) //1
+
+console.log(toggle()) //2
+
+console.log(toggle()) //3
+
