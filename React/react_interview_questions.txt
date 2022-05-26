@@ -1,5 +1,24 @@
 Q.1- Explain redux to a 5 year old (ELI5) ?
-A - 
+A - Let’s consider an event you’re likely conversant with - going to the bank to withdraw cash. Even if you don’t do this often, you’re likely aware of what the process looks like.
+You wake up one morning, and head to the bank as quickly as possible. While going to the bank there’s just one intention / action you’ve got in mind i.e WITHDRAW_MONEY. You want to withdraw money from the bank.
+Here’s where things get interesting. When you get into the bank, you go straight to the Cashier to make your request known.
+Wait, you went to the Cashier? Why didn’t you just go into the bank vault to get your money?
+After all, it’s your hard earned money.
+
+
+Well, like you already know, things don’t work that way. Yes, the bank has money in the vault, but you have to talk to the Cashier to help you follow a due process for withdrawing your own money.
+The Cashier, from their computer, then enters some commands and delivers your cash to you. Easy-peasy.
+The bank vault keeps the money in the bank, right?
+Well, within your application, you don’t spend money. Instead, the STATE of your application is like the money you spend. The entire user interface of your application is a function of your state.
+Just like the bank vault keeps your money safe in the bank, the state of your application is kept safe by something called a STORE. So, the STORE keeps your “money” i.e state, intact.
+Uh, you need to remember this, okay?
+
+
+The Redux Store can be likened to the Bank Vault. It holds the state of your application - and keeps it safe.
+This leads to the first Redux principle:
+Have a single source of truth: The state of your whole application is stored in an object tree within a single Redux store.
+In simple terms, with Redux, it is is advisable to store your application state in a single object managed by the Redux STORE. It’s like having ONE VAULT as opposed to littering money everywhere along the bank hall.
+
 Q.2 - What is immutability?
 A - Immutability is a concept that React programmers need to understand. An immutable value or object cannot be changed, so every update creates new value, leaving the old one untouched.
 
